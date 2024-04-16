@@ -152,72 +152,7 @@ function datoGeneral(){
 
 // funcion para capturar día y hora
 
-
-
-    // Definimos una función para llenar el select utilizando Fetch
-function diaGeneral() {
-    // Seleccionamos el elemento <select>
-    const select = document.getElementById('dia');
-  
-    // Utilizamos Fetch para obtener los datos del servidor (en este caso, un JSON)
-    fetch('dia.json')
-      .then(response => response.json()) // Convertimos la respuesta a JSON
-      .then(items => {
-        // Iteramos sobre los datos y creamos opciones para cada uno
-        items.forEach(dias => {
-                   html = `                        
-               <option>${dias.dia1}</option>
-               <option>${dias.dia2}</option>
-               <option>${dias.dia3}</option>
-               <option>${dias.dia4}</option>
-               <option>${dias.dia5}</option>
-           `;
-            });
-        select.innerHTML = html;
-       
-      })
-      .catch(error => {
-        console.error('Error al cargar las opciones:', error);
-      });
-
-     
-  }
-  document.addEventListener('DOMContentLoaded', diaGeneral);
-
-
-      // Definimos una función para llenar el select utilizando Fetch
-function horaGeneral() {
-    // Seleccionamos el elemento <select>
-    const selectHora = document.getElementById('hora');
-  
-    // Utilizamos Fetch para obtener los datos del servidor (en este caso, un JSON)
-    fetch('hora.json')
-      .then(response => response.json()) // Convertimos la respuesta a JSON
-      .then(items => {
-        // Iteramos sobre los datos y creamos opciones para cada uno
-        items.forEach(horas => {
-                   html = `                        
-               <option>${horas.hora1}</option>
-               <option>${horas.hora2}</option>
-               <option>${horas.hora3}</option>
-               <option>${horas.hora4}</option>
-               <option>${horas.hora5}</option>
-           `;
-            });
-        selectHora.innerHTML = html;
-       
-      })
-      .catch(error => {
-        console.error('Error al cargar las opciones:', error);
-      });
-
-     
-  }
-  document.addEventListener('DOMContentLoaded', horaGeneral);
-
-
-
-  function horario(){
+function horario(){
     
     let dia = document.getElementById("dia").value;
     let hora = document.getElementById("hora").value;
@@ -264,3 +199,44 @@ Swal.fire({
     citaDoctor.style.display = "block";   
     
 }
+
+// const traerTexto = document.querySelector("#btnTexto");
+
+// traerTexto.addEventListener('click', ()=>{
+// fetch('dia.json')
+//     .then((res) => {
+//         // console.log(res)
+//         return res.json();
+//     })
+//     .then((dias) => {
+//         // console.log(dias.dia1);
+//         renderHTML(dias)
+//     })
+//     .catch((err)=>{
+//         console.log("error")
+//     })
+// })
+
+// function  renderHTML(items){
+
+//     let content = document.querySelector("#diasss");
+//     let html;
+
+//     items.forEach(dias => {
+//         html = `
+       
+   
+        
+//         <option>${dias.dia1}</option>
+//         <option>${dias.dia2}</option>
+//         <option>${dias.dia3}</option>
+//         <option>${dias.dia4}</option>
+//         <option>${dias.dia5}</option>
+          
+            
+//         `;
+        
+//     });
+//     content.innerHTML = html;
+
+// }
